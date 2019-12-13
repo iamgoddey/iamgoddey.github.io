@@ -59,7 +59,7 @@ print("Dimension: {}".format(Main_Data.shape))
  ```python
  def Detecting_Outliers(Data):
     threshold=1
-    mean = np.mean(Data) # computing mean of the dataset 
+    mean = np.mean(Data) # computing mean of the dataset
     std =np.std(Data)  # computing the standard deviation
     for y in Data:
         z_score= (y - mean)/std
