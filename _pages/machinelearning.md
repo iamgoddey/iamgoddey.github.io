@@ -1,6 +1,6 @@
 ---
 layout: posts
-permalink: /Machine-Learning-Projects/
+permalink: /machine-learning-projects/
 title: "Machine Learning Projects"
 author_profile: true
 header:
