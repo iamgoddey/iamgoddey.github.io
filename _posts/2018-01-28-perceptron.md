@@ -29,23 +29,15 @@ First of all, just like what you do with any other dataset, you are going to imp
 
 1. Importing library and Reading the dataset:
 ```python
-    # Basic libraries
     import pandas as pd
     import numpy as np
     import seaborn as sns
-
-    # Spliting
     from sklearn.model_selection import train_test_split, cross_val_score
-
-    # Sampling
     from imblearn.over_sampling import SMOTE
-
-    # Machine Learning
     from xgboost import XGBClassifier
     from sklearn.preprocessing import StandardScaler
     from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
     from sklearn.metrics import mean_squared_error, f1_score, precision_score, recall_score
-
 ```
 2. Loading of Dataset:
 ```python
@@ -54,15 +46,11 @@ First of all, just like what you do with any other dataset, you are going to imp
 3. Performing an [Exploratory Data Analysis] on the Staff Promotion Data set. The Summary of a DataFrame helps to understand the type of variable, data type and presence of null values.
  * Size and Shape of Data:
 ```python
-# The size of Data set
 print('The size of the Train_Riders data is :', Main_Data.size)
-
-# Show dimension of the data
 print("Dimension: {}".format(Main_Data.shape))
 ```
  * Summary Statistics:
  ```python
     Stat_of_Main_Data = Numeric_Data.describe(include='all')
-    # To transpose and make Variables Rows
     Stat_of_Main_Data = Stat_of_Main_Data.transpose()
  ```
