@@ -55,3 +55,25 @@ print("Dimension: {}".format(Main_Data.shape))
     Stat_of_Main_Data = Numeric_Data.describe(include='all')
     Stat_of_Main_Data = Stat_of_Main_Data.transpose()
  ```
+ * Checking for Outliers
+ ```python
+ def Detecting_Outliers(Data):
+    threshold=1
+    mean = np.mean(Data) # computing mean of the dataset 
+    std =np.std(Data)  # computing the standard deviation
+    for y in Data:
+        z_score= (y - mean)/std
+        if np.abs(z_score) > threshold:
+            Outliers.append(y)        
+    return Outliers
+fig=plt.figure()
+for i  in range(0,len(Main_Data.columns)):
+    Outliers=[]
+    if Main_Data[Main_Data.columns[i]].dtypes== np.int64 or Main_Data[Main_Data.columns[i]].dtypes== np.int64  :
+        Outliers=Detecting_Outliers(Main_Data.iloc[:,i])
+        if len(Outliers)>0:               
+            ax = plt.subplot(1,1,1)
+            ax.boxplot(Main_Data[list(Main_Data.columns)[i]])
+            plt.title(list(Main_Data.columns)[i] + " Outlier Plot")
+            plt.show()
+ ```
