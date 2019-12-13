@@ -1,63 +1,68 @@
 ---
-title: "Data Wrangling Project"
-date: 2018-01-28
+title: "XGBoost Classifier"
+date: 2019-12-14
 tags: [data wrangling, data science, messy data]
 header:
   image: "/images/perceptron/percept.jpg"
-excerpt: "Data Wrangling, Data Science, Messy Data"
+excerpt: "Data Science, Machine Learning Engineering, AI, Data Engineering"
 mathjax: "true"
 ---
 
-# H1 Heading
+[Using XGBoost](https://github.com/iamgoddey/staffing_promotion) in predicting staff promotion algorithm.
 
-## H2 Heading
+**XGBoost** is one of the most popular machine learning algorithm these days. Regardless of the type of prediction task at hand; *regression or classification*.
 
-### H3 Heading
+XGBoost is well-known to provide better solutions than other machine learning algorithms. In fact, since its inception, it has become the *"state-of-the-art”* machine learning algorithm to deal with structured data.
 
-Here's some basic text.
+**But what makes XGBoost so popular?**
 
-And here's some *italics*
+* **Speed and performance:** Originally written in C++, it is comparatively faster than other ensemble classifiers.
 
-Here's some **bold** text.
++ **Core algorithm is parallelisable:** Because the core XGBoost algorithm is parallelisable it can harness the power of multi-core computers. It is also parallelizable onto GPU’s and across networks of computers making it feasible to train on very large datasets as well.
 
-What about a [link](https://github.com/dataoptimal)?
+- **Consistently outperforms other algorithm methods:** It has shown better performance on a variety of machine learning benchmark datasets.
 
-Here's a bulleted list:
-* First item
-+ Second item
-- Third item
+- **Wide variety of tuning parameters:** XGBoost internally has parameters for *cross-validation, regularization, user-defined objective functions, missing values, tree parameters, scikit-learn compatible API* etc.
 
-Here's a numbered list:
-1. First
-2. Second
-3. Third
+# Using XGBoost in Python
+First of all, just like what you do with any other dataset, you are going to import the dataset and store it in a variable called *"Main_Data"*. To import we use the **Pandas** python package. We import other libraries as we will have to do **Exploratory Data Analysis**
 
-Python code block:
+1. Importing library and Reading the dataset:
 ```python
+    # Basic libraries
+    import pandas as pd
     import numpy as np
+    import seaborn as sns
 
-    def test_function(x, y):
-      z = np.sum(x,y)
-      return z
+    # Spliting
+    from sklearn.model_selection import train_test_split, cross_val_score
+
+    # Sampling
+    from imblearn.over_sampling import SMOTE
+
+    # Machine Learning
+    from xgboost import XGBClassifier
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+    from sklearn.metrics import mean_squared_error, f1_score, precision_score, recall_score
+
 ```
-
-R code block:
-```r
-library(tidyverse)
-df <- read_csv("some_file.csv")
-head(df)
+2. Loading of Dataset:
+```python
+    Main_Data = pd.read_csv('data.csv')
 ```
+3. Performing an [Exploratory Data Analysis] on the Staff Promotion Data set. The Summary of a DataFrame helps to understand the type of variable, data type and presence of null values.
+ * Size and Shape of Data:
+```python
+# The size of Data set
+print('The size of the Train_Riders data is :', Main_Data.size)
 
-Here's some inline code `x+y`.
-
-Here's an image:
-<img src="{{ site.url }}{{ site.baseurl }}/images/perceptron/linsep.jpg" alt="linearly separable data">
-
-Here's another image using Kramdown:
-![alt]({{ site.url }}{{ site.baseurl }}/images/perceptron/linsep.jpg)
-
-Here's some math:
-
-$$z=x+y$$
-
-You can also put it inline $$z=x+y$$
+# Show dimension of the data
+print("Dimension: {}".format(Main_Data.shape))
+```
+ * Summary Statistics:
+ ```python
+    Stat_of_Main_Data = Numeric_Data.describe(include='all')
+    # To transpose and make Variables Rows
+    Stat_of_Main_Data = Stat_of_Main_Data.transpose()
+ ```
