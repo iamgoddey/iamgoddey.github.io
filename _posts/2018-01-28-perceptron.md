@@ -27,7 +27,7 @@ XGBoost is well-known to provide better solutions than other machine learning al
 # Using XGBoost in Python
 First of all, just like what you do with any other dataset, you are going to import the dataset and store it in a variable called *"Main_Data"*. To import we use the **Pandas** python package. We import other libraries as we will have to do **Exploratory Data Analysis**
 
-1. Importing library and Reading the dataset:
+1. Importing libraries:
 ```python
     import pandas as pd
     import numpy as np
@@ -44,6 +44,7 @@ First of all, just like what you do with any other dataset, you are going to imp
     Main_Data = pd.read_csv('data.csv')
 ```
 3. Performing an [Exploratory Data Analysis] on the Staff Promotion Data set. The Summary of a DataFrame helps to understand the type of variable, data type and presence of null values.
+
  * Size and Shape of Data:
 ```python
 print('The size of the Train_Riders data is :', Main_Data.size)
