@@ -12,3 +12,8 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+main:
+  - title: "Numerical Methods"
+    url: /About/
+  - title: "Numerical Methods for Optimal Control Problems"
+    url: /optimal-control-problems/
