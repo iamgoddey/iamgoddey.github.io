@@ -1,5 +1,5 @@
 ---
-layout: controls
+layout: posts 
 permalink: /Optimal-Controls/
 title: "Optimal Control Problems"
 author_profile: true
