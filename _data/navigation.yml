@@ -4,6 +4,9 @@ main:
     url: /about/
   - title: "Machine Learning Projects"
     url: /machine-learning-projects/
+    
+  - title: "Numerical Methods for Optimal Control Problems"
+      url: /optimal-control-problems/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -11,9 +14,4 @@ main:
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
-  #   url: /sitemap/
-main:
-  - title: "Numerical Methods"
-    url: /About/
-  - title: "Numerical Methods for Optimal Control Problems"
-    url: /optimal-control-problems/
+  #   url: /sitemap/s
